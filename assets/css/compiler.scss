@@ -1,0 +1,170 @@
+$font-family: 'Montserrat', sans-serif;
+$header-font-family: 'Kaushan Script', cursive;
+$main-color: #FFC300;
+$accent-color1: #FF5733;
+$accent-color2: #C70039;
+$accent-color3: #900c3f;
+$accent-color4: #581845;
+$identifier: 2px solid red;
+
+// PSEUDO SELECTORS
+::placeholder {
+    font-style: italic;
+    color: rgba(255, 195, 0, 0.3);
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+
+body {
+    background-image: linear-gradient(to right, $accent-color3, $main-color);
+}
+
+#screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 3% auto 5px auto; // should be relative to #listContainer's margin
+    width: 400px;
+    background-color: $accent-color4;
+    border: 1px solid $accent-color4;
+    border-radius: 5px;
+
+    h1 {
+        font-size: 1.5em;
+        font-family: $header-font-family;
+        color: $main-color;
+    }
+    
+    .fas {
+        color: $main-color;
+        font-size: 1.5em;
+        cursor: pointer;
+        transition-property: all;
+        transition-duration: 500ms;
+    }
+
+
+}
+
+#inputContainer {
+    padding: 5px;
+    margin: 5px auto 5px auto;
+    width: 400px; // this needs to be 10px's greater (410px)
+    height: fit-content;
+    background-color: $accent-color4;
+    border: 1px solid $accent-color4;
+    border-radius: 5px;
+
+    input[type="text"] {
+        width: 400px;
+        height: 25px;
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        color: $main-color;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+#listContainer {
+    margin: 5px auto 7% auto; // should be relative to #headerContainer's's margin
+    width: 400px;
+    height: 400px;
+    overflow-y: scroll;
+    background-color: $accent-color4;
+    border-radius: 5px;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: rgba(199, 0, 57, 0.3);
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 195, 0, 0.3);
+        border-radius: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+// TOGGLED CLASSES
+.hidden {
+    display: none;
+}
+
+.rotate {
+    transform: rotateZ(90deg);
+}
+
+.todoCards {
+    display: flex;
+    height: fit-content;
+    margin: 7.5px;
+    border-radius: 5px;
+    background-color: $accent-color2;
+    color: $main-color;
+    transition-property: all;
+    transition-duration: 500ms;
+
+    #iconContainer {
+        color: $accent-color4;
+        position: relative;
+        top: 3px;
+        margin: 10px;
+        transition-property: none;
+        cursor: pointer;
+    }
+}
+
+.done {
+    display: flex;
+    height: fit-content;
+    margin: 7.5px;
+    border-radius: 5px;
+    color: rgba(255, 195, 0, 0.3);
+    background-color: rgba(199, 0, 57, 0.3);
+    transition-property: all;
+    transition-duration: 500ms;
+
+    #iconContainer {
+        color: $accent-color2;
+        position: relative;
+        top: 3px;
+        margin: 10px;
+        cursor: pointer;
+    }
+}
+
+.todoCardText {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin: 10px 0px; 
+}
+
+
+
+
+
