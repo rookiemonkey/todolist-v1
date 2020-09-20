@@ -1,0 +1,22 @@
+{
+  "name": "todolistv1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rookiemonkey/todolist-v1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rookiemonkey/todolist-v1/issues"
+  },
+  "homepage": "https://github.com/rookiemonkey/todolist-v1#readme",
+  "devDependencies": {
+    "minify": "^5.2.0"
+  }
+}
