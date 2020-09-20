@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rookiemonkey/todolist-v1#readme",
   "devDependencies": {
-    "minify": "^5.2.0"
+    "minify": "^5.2.0",
+    "node-sass": "^4.14.1"
   }
 }
