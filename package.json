@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "sass": "node-sass assets/css/style.scss assets/css/style.css",
+    "sass-min": "node-sass assets/css/style.scss assets/css/style.css --output-style compressed"
   },
   "repository": {
     "type": "git",
