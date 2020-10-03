@@ -96,7 +96,9 @@ $("#listContainer").on("click", "div", function () {
 });
 
 // remove to-do
-$("#listContainer").on("click", "a", function () {
+$("#listContainer").on("click", "a", function (event) {
+    event.stopPropagation();
+
     $(this).fadeToggle("725", function () { // fade out before deleting the node 
         const toBeDeleted = $(this).parent()['0'].dataset.label;
 
