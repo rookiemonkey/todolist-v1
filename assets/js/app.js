@@ -74,17 +74,24 @@ $("#listContainer").on("click", "div", function () {
         return todo
     })
 
-    localStorage.setItem('todos', JSON.stringify(updatedTodos))
+    // sort todos, finished todos goes to the bottom
+    const done = updatedTodos.filter(todo => todo.done)
+    const notDone = updatedTodos.filter(todo => !todo.done)
+    const sorted = [...notDone, ...done]
+
+    localStorage.setItem('todos', JSON.stringify(sorted))
 
     // update dom
     if ($(this).hasClass("todoCards")) {
         // done
         $(this).removeClass("todoCards");
         $(this).addClass("done");
+        sort();
     } else {
         // not done
         $(this).addClass("todoCards");
         $(this).removeClass("done");
+        sort();
     }
 });
 
@@ -102,3 +109,22 @@ $("#listContainer").on("click", "a", function () {
         $(this).parent().remove();
     })
 })
+
+function sort() {
+
+    // sorts the dom
+
+    const listContainerChildren = Object.assign({}, $('#listContainer').children())
+
+    const DOM_done = Object.values(listContainerChildren).filter(child => {
+        return child.constructor.name === 'HTMLDivElement' && child.className === 'done'
+    })
+
+    const DOM_notDone = Object.values(listContainerChildren).filter(child => {
+        return child.constructor.name === 'HTMLDivElement' && child.className === 'todoCards'
+    })
+
+    $('#listContainer').children().remove()
+    $("#listContainer").append(DOM_notDone)
+    $("#listContainer").append(DOM_done)
+}
